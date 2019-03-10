@@ -26,4 +26,8 @@ public class Card implements Comparable<Card> {
 		return rank.compareTo(other.rank);
 	}
 
+	@Override
+	public String toString() {
+		return rank.toString() + " " + suite.toString();
+	}
 }

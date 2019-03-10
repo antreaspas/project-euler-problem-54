@@ -1,8 +1,9 @@
 package main.game.models;
 
+import java.util.Arrays;
+
 import main.game.enums.GameResult;
 import main.game.helpers.GameResolverHelper;
-import main.game.helpers.HandResultHelper;
 
 public class Game {
 
@@ -10,21 +11,12 @@ public class Game {
 	private final Hand playerTwoHand;
 
 	public Game(String[] strCards) {
-		this.playerOneHand = new Hand();
-		for (int i = 0; i < 5; i++) {
-			this.playerOneHand.addCardFromTextAtIndex(strCards[i], i);
-		}
-
-		this.playerTwoHand = new Hand();
-		for (int i = 5; i < 10; i++) {
-			this.playerTwoHand.addCardFromTextAtIndex(strCards[i], i - 5);
-		}
+		this.playerOneHand = new Hand(Arrays.copyOfRange(strCards, 0, 5));
+		this.playerTwoHand = new Hand(Arrays.copyOfRange(strCards, 5, 10));
 	}
 
 	public boolean isPlayerOneWinner() {
-		HandResultHelper helper1 = new HandResultHelper(playerOneHand);
-		HandResultHelper helper2 = new HandResultHelper(playerTwoHand);
-		return GameResolverHelper.calculateGameResult(helper1.getHandResult(), helper2.getHandResult())
+		return GameResolverHelper.calculateGameResult(playerOneHand.getHandResult(), playerTwoHand.getHandResult())
 				.equals(GameResult.PLAYER_ONE_WIN);
 	}
 

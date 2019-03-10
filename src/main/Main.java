@@ -20,6 +20,8 @@ public class Main {
 
 	private void runGames() throws IOException {
 		Files.lines(pokerGamesFilePath).forEach(line -> {
+			if (totalGamesPlayed == 751)
+				System.out.println("here");
 			Game game = new Game(line.split(" "));
 			if (game.isPlayerOneWinner())
 				gamesPlayerOneWon++;
@@ -33,9 +35,11 @@ public class Main {
 		main.runGames();
 		long finish = System.nanoTime();
 		long timeElapsed = finish - start;
-		System.out.println(String.format("Player one won %d times \n Total games played: %d", main.gamesPlayerOneWon,
+		final double seconds = ((double) timeElapsed / 1000000000);
+
+		System.out.println(String.format("Player one won %d times \nTotal games played: %d", main.gamesPlayerOneWon,
 				main.totalGamesPlayed));
-		System.out.println("Runtime: " + new DecimalFormat("#.##########").format(timeElapsed) + " seconds");
+		System.out.println("Runtime: " + new DecimalFormat("#.##########").format(seconds) + " seconds");
 
 	}
 
