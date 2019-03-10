@@ -1,5 +1,5 @@
 # Java Solution - Project Euler Problem 54
-An attempt to solve the Poker Hands problem
+An attempt to solve the Poker Hands problem. I tried to not focus too much on performance, there are some improvements to be made for sure. Currently the developed solution solves the problem in about ~0.12 seconds. Feel free to clone the project, improve the runtime of the solution, and submit a PR!
 
 ### Full Problem Description
 
