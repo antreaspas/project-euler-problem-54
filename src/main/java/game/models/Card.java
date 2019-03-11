@@ -1,7 +1,7 @@
-package main.game.models;
+package game.models;
 
-import main.game.enums.Rank;
-import main.game.enums.Suite;
+import game.enums.Rank;
+import game.enums.Suite;
 
 public class Card implements Comparable<Card> {
 

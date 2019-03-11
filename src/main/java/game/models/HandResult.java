@@ -1,7 +1,7 @@
-package main.game.models;
+package game.models;
 
-import main.game.enums.HandResultType;
-import main.game.models.data.HandResultCardInfo;
+import game.enums.HandResultType;
+import game.models.data.HandResultCardInfo;
 
 public class HandResult {
 

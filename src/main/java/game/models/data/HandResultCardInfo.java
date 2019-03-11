@@ -1,9 +1,9 @@
-package main.game.models.data;
+package game.models.data;
 
 import java.util.Collections;
 import java.util.List;
 
-import main.game.models.Card;
+import game.models.Card;
 
 public class HandResultCardInfo {
 	private final List<Card> handResultCards;
@@ -12,7 +12,7 @@ public class HandResultCardInfo {
 	public HandResultCardInfo(List<Card> handResultCards, List<Card> remainingCards) {
 		this.handResultCards = handResultCards;
 		this.remainingCards = remainingCards;
-		
+
 		Collections.sort(this.handResultCards, Collections.reverseOrder());
 		Collections.sort(this.remainingCards, Collections.reverseOrder());
 	}

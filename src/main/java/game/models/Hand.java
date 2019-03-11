@@ -1,13 +1,14 @@
-package main.game.models;
+package game.models;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
-import main.game.enums.HandResultType;
-import main.game.enums.Rank;
-import main.game.helpers.HandResultHelper;
-import main.game.models.data.HandResultCardInfo;
+
+import game.enums.HandResultType;
+import game.enums.Rank;
+import game.helpers.HandResultHelper;
+import game.models.data.HandResultCardInfo;
 
 public class Hand {
 
@@ -33,7 +34,8 @@ public class Hand {
 			return new HandResult(HandResultType.FULL_HOUSE,
 					new HandResultCardInfo(Arrays.asList(cards), Collections.emptyList()));
 		else if (map.containsValue(3))
-			return new HandResult(HandResultType.THREE_OF_A_KIND, HandResultHelper.splitCardsByFrequency(cards, map, 3));
+			return new HandResult(HandResultType.THREE_OF_A_KIND,
+					HandResultHelper.splitCardsByFrequency(cards, map, 3));
 		else if (map.containsValue(2))
 			return HandResultHelper.getPairOrTwoPairsResult(cards, map);
 		else

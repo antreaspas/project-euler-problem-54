@@ -1,4 +1,4 @@
-package main.game.enums;
+package game.enums;
 
 public enum Suite {
 	HEARTS, CLUBS, SPADES, DIAMONDS;
