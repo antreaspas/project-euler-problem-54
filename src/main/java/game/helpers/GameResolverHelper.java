@@ -1,10 +1,10 @@
-package main.game.helpers;
+package game.helpers;
 
 import java.util.List;
 
-import main.game.enums.GameResult;
-import main.game.models.Card;
-import main.game.models.HandResult;
+import game.enums.GameResult;
+import game.models.Card;
+import game.models.HandResult;
 
 public class GameResolverHelper {
 

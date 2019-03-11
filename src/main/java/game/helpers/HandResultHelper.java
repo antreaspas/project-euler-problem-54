@@ -1,4 +1,4 @@
-package main.game.helpers;
+package game.helpers;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,12 +11,12 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import main.game.enums.HandResultType;
-import main.game.enums.Rank;
-import main.game.enums.Suite;
-import main.game.models.Card;
-import main.game.models.HandResult;
-import main.game.models.data.HandResultCardInfo;
+import game.enums.HandResultType;
+import game.enums.Rank;
+import game.enums.Suite;
+import game.models.Card;
+import game.models.HandResult;
+import game.models.data.HandResultCardInfo;
 
 public class HandResultHelper {
 
@@ -46,16 +46,15 @@ public class HandResultHelper {
 					new HandResultCardInfo(Arrays.asList(cards), Collections.emptyList()));
 		return Optional.ofNullable(handResult);
 	}
-	
+
 	public static HandResult getPairOrTwoPairsResult(Card[] cards, Map<Rank, Integer> map) {
 		HandResultCardInfo cardResult = splitCardsByFrequency(cards, map, 2);
 		if (cardResult.getHandResultCards().size() == 4)
 			return new HandResult(HandResultType.TWO_PAIR, cardResult);
 		else
-			return new HandResult(HandResultType.PAIR, cardResult);			
+			return new HandResult(HandResultType.PAIR, cardResult);
 	}
-	
-	
+
 	public static HandResultCardInfo splitCardsByFrequency(Card[] cards, Map<Rank, Integer> map, int frequency) {
 		Set<Rank> winningRanks = new HashSet<>();
 		for (Entry<Rank, Integer> entrySet : map.entrySet()) {
@@ -78,7 +77,5 @@ public class HandResultHelper {
 		}
 		return map;
 	}
-
-
 
 }

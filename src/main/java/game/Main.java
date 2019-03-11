@@ -1,11 +1,11 @@
-package main;
+package game;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
-import main.game.models.Game;
+import game.models.Game;
 
 public class Main {
 
@@ -20,8 +20,6 @@ public class Main {
 
 	private void runGames() throws IOException {
 		Files.lines(pokerGamesFilePath).forEach(line -> {
-			if (totalGamesPlayed == 751)
-				System.out.println("here");
 			Game game = new Game(line.split(" "));
 			if (game.isPlayerOneWinner())
 				gamesPlayerOneWon++;

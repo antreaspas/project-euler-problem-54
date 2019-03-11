@@ -1,9 +1,9 @@
-package main.game.models;
+package game.models;
 
 import java.util.Arrays;
 
-import main.game.enums.GameResult;
-import main.game.helpers.GameResolverHelper;
+import game.enums.GameResult;
+import game.helpers.GameResolverHelper;
 
 public class Game {
 
